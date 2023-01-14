@@ -6,26 +6,23 @@
 # June 6, 2018
 # Braille Library
 
-# # Dependencies
-# 1) sudo apt-get install pyaudio
-# 3) sudo apt-get install espeak 
-# 2) pip3 install SpeechRecognition
-# 3) pip3 install numpy
-# 4) pip3 install pillow
-# 5) sudo apt-get install pytesseract
-# 6) sudo apt-get install opencv-python
-# 7) pip3 install opencv
-# 8) pip3 install matplotlib
+# Modified by Jackson Lippert
+# January 14, 2022
+# Better braille library
 
-# Upload to GitHub
+# # Dependencies
+# 1) pip3 install SpeechRecognition
+# 2) pip3 install numpy
+# 3) pip3 install pillow
+# 4) sudo apt-get install pytesseract
+# 5) sudo apt-get install opencv-python
+# 6) pip3 install opencv
 
 import numpy as np
-import os
 import PIL
 import PIL.Image as Image
-from pytesseract import image_to_string
-import matplotlib.pyplot as plt
-from model import charToArray, asciicodes, brailles
+import pytesseract as pt
+from model import asciicodes, brailles
 
 ascii_braille = {}
 ascii_letters = {}
@@ -103,13 +100,15 @@ def brailleToTextArray(array):
     return new_chars
 
 def imageToText(img):
-    return image_to_string(Image.open(img))
+    return pt.image_to_string(Image.open(img))
 
 def imageToBraille(img):
     textToBraille(imageToText(img))
 
-
 letters = "⠓⠑⠇⠇⠕⠀⠺⠕⠗⠇⠙⠮"
+
+pt.pytesseract.tesseract_cmd = r'C:/Program Files/Tesseract-OCR/tesseract.exe'
 
 print(textToBraille("Hello World!"))
 print(brailleToTextArray(letters))
+print(imageToText("Braille-Interpreter/backend/braille/images/Picture1.png"))
