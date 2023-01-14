@@ -2,7 +2,7 @@ import braille
 from flask import Flask
 from flask import jsonify
 from flask import request
-from .brailleImage import Image_Translate
+from brailleImage import Image_Translate
 
 app = Flask(__name__)
 
