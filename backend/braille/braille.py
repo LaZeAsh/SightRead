@@ -113,4 +113,3 @@ def imageToText(url):
     except:
         pt.pytesseract.tesseract_cmd = r'C:/Program Files/Tesseract-OCR/tesseract.exe'
         return pt.image_to_string(Image.open("userimage.png"))
-
