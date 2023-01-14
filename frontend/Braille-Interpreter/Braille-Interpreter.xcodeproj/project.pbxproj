@@ -14,6 +14,7 @@
 		E25357B42973167C00757EC2 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25357B32973167B00757EC2 /* Title.swift */; };
 		E25357B6297321EB00757EC2 /* TextToBraille.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25357B5297321EB00757EC2 /* TextToBraille.swift */; };
 		E25357BB297347CF00757EC2 /* InterpretedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25357BA297347CF00757EC2 /* InterpretedText.swift */; };
+		E25357BD297354D000757EC2 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25357BC297354D000757EC2 /* ImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		E25357B32973167B00757EC2 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		E25357B5297321EB00757EC2 /* TextToBraille.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToBraille.swift; sourceTree = "<group>"; };
 		E25357BA297347CF00757EC2 /* InterpretedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterpretedText.swift; sourceTree = "<group>"; };
+		E25357BC297354D000757EC2 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			children = (
 				E25357A72973164000757EC2 /* ContentView.swift */,
 				E25357B32973167B00757EC2 /* Title.swift */,
+				E25357BC297354D000757EC2 /* ImageView.swift */,
 				E25357B5297321EB00757EC2 /* TextToBraille.swift */,
 				E25357BA297347CF00757EC2 /* InterpretedText.swift */,
 			);
@@ -154,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E25357BD297354D000757EC2 /* ImageView.swift in Sources */,
 				E25357A82973164000757EC2 /* ContentView.swift in Sources */,
 				E25357B6297321EB00757EC2 /* TextToBraille.swift in Sources */,
 				E25357BB297347CF00757EC2 /* InterpretedText.swift in Sources */,

@@ -25,7 +25,7 @@ struct Title: View {
                 VStack(spacing: 10) {
                     NavigationLink(destination: TextToBraille(), label: {
                         HStack(alignment: .firstTextBaseline) {
-                            Image(systemName: "text.quote")
+                            Image(systemName: "hand.point.up.braille.fill")
                                 .imageScale(.medium)
                                 .symbolRenderingMode(.monochrome)
                             Text("Text to braille")
@@ -42,39 +42,44 @@ struct Title: View {
                         }
                     })
                     
-                    HStack(alignment: .firstTextBaseline) {
-                        Image(systemName: "hand.point.up.braille.fill")
-                            .imageScale(.medium)
-                            .symbolRenderingMode(.monochrome)
-                        Text("Braille to text")
-                    }
-                    .font(.body.weight(.medium))
-                    .padding(.vertical, 16)
-                    .frame(maxWidth: .infinity)
-                    .clipped()
-                    .foregroundColor(.green)
-                    .background {
-                        RoundedRectangle(cornerRadius: 10, style: .continuous)
-                            .stroke(.clear.opacity(0.25), lineWidth: 0)
-                            .background(RoundedRectangle(cornerRadius: 10, style: .continuous).fill(.yellow.opacity(0.1)))
-                    }
+                    NavigationLink(destination: ImageView(text: true), label: {
+                        HStack(alignment: .firstTextBaseline) {
+                            Image(systemName: "text.quote")
+                                .imageScale(.medium)
+                                .symbolRenderingMode(.monochrome)
+                            Text("Braille to text")
+                        }
+                        .font(.body.weight(.medium))
+                        .padding(.vertical, 16)
+                        .frame(maxWidth: .infinity)
+                        .clipped()
+                        .foregroundColor(.green)
+                        .background {
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .stroke(.clear.opacity(0.25), lineWidth: 0)
+                                .background(RoundedRectangle(cornerRadius: 10, style: .continuous).fill(.yellow.opacity(0.1)))
+                        }
+                    })
                     
-                    HStack(alignment: .firstTextBaseline) {
-                        Image(systemName: "ellipsis.bubble")
-                            .imageScale(.medium)
-                            .symbolRenderingMode(.monochrome)
-                        Text("Braille to speech")
-                    }
-                    .font(.body.weight(.medium))
-                    .padding(.vertical, 16)
-                    .frame(maxWidth: .infinity)
-                    .clipped()
-                    .foregroundColor(.green)
-                    .background {
-                        RoundedRectangle(cornerRadius: 10, style: .continuous)
-                            .stroke(.clear.opacity(0.25), lineWidth: 0)
-                            .background(RoundedRectangle(cornerRadius: 10, style: .continuous).fill(.yellow.opacity(0.1)))
-                    }
+                    NavigationLink(destination: ImageView(text: false), label: {
+                        HStack(alignment: .firstTextBaseline) {
+                            Image(systemName: "ellipsis.bubble")
+                                .imageScale(.medium)
+                                .symbolRenderingMode(.monochrome)
+                            Text("Braille to speech")
+                        }
+                        .font(.body.weight(.medium))
+                        .padding(.vertical, 16)
+                        .frame(maxWidth: .infinity)
+                        .clipped()
+                        .foregroundColor(.green)
+                        .background {
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .stroke(.clear.opacity(0.25), lineWidth: 0)
+                                .background(RoundedRectangle(cornerRadius: 10, style: .continuous).fill(.yellow.opacity(0.1)))
+                        }
+                    })
+                    
                 }
                 .padding()
                 .background {
