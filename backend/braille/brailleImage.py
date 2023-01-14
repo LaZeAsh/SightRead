@@ -17,7 +17,7 @@ class Image_Translate():
     # url = 'https://i.imgur.com/NwLqmz2.jpg'    # works
     # url = 'https://i.imgur.com/4nC067a.jpg'    # works
     # url = 'https://i.imgur.com/osNCAx3.jpg'    # works
-    self.url = 'https://i.imgur.com/maU4r0t.jpg'    # works
+    self.url = url    # works
     # url = 'https://i.imgur.com/OdyYxp1.jpg'    # not works :< (because letters aren't aligned vertically)
     # url = 'https://i.imgur.com/ttq5PzE.jpg'    # works
     # url = 'https://i.imgur.com/EjBz4nI.jpg'    # works (iter = 0, width = 1500)
