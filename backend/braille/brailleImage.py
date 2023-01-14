@@ -345,7 +345,3 @@ class Image_Translate():
       translated = translated + l
 
     return translated  
-    
-hi = Image_Translate("idk")
-
-hi.main()

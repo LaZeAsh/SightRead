@@ -2,7 +2,7 @@ import braille
 from flask import Flask
 from flask import jsonify
 from flask import request
-from brailleImage import braille_image_to_english
+from .brailleImage import Image_Translate
 
 app = Flask(__name__)
 
@@ -25,10 +25,11 @@ def get_image_text(url):
     return jsonify({'message' : text})
 
 # # Braille Image -> TEXT
-# @app.route('/brailleImageToText/<string:url>', methods=['GET'])
-# def braille_image_to_text(url):
-#     text = braille_image_to_english(url)
-#     return jsonify({'message' : text})
+@app.route('/brailleImageToText/<string:url>', methods=['GET'])
+def braille_image_to_text(url):
+    translator = Image_Translate(url)
+    text = translator.main()
+    return jsonify({'message' : text})
 
 
 if __name__ == "__main__":
