@@ -22,7 +22,12 @@ import numpy as np
 import PIL
 import PIL.Image as Image
 import pytesseract as pt
+import urllib.request
+from PIL import Image
 from model import asciicodes, brailles
+
+
+
 
 ascii_braille = {}
 ascii_letters = {}
@@ -99,19 +104,13 @@ def brailleToTextArray(array):
         new_chars = new_chars + str(ascii_letters[key])
     return new_chars
 
-def imageToText(img):
+def imageToText(url):
+    urllib.request.urlretrieve(url,
+   "userimage.png")
+
     try:
-        return pt.image_to_string(Image.open(img))
+        return pt.image_to_string(Image.open("userimage.png"))
     except:
         pt.pytesseract.tesseract_cmd = r'C:/Program Files/Tesseract-OCR/tesseract.exe'
-        return pt.image_to_string(Image.open(img))
+        return pt.image_to_string(Image.open("userimage.png"))
 
-def imageToBraille(img):
-    textToBraille(imageToText(img))
-
-letters = "⠓⠑⠇⠇⠕⠀⠺⠕⠗⠇⠙⠮"
-
-
-print(textToBraille("Hello World!"))
-print(brailleToTextArray(letters))
-print(imageToText("Braille-Interpreter/backend/User-Images/Picture1.png"))
