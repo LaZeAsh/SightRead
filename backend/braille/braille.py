@@ -107,8 +107,6 @@ def imageToBraille(img):
 
 letters = "⠓⠑⠇⠇⠕⠀⠺⠕⠗⠇⠙⠮"
 
-pt.pytesseract.tesseract_cmd = r'C:/Program Files/Tesseract-OCR/tesseract.exe'
-
 print(textToBraille("Hello World!"))
 print(brailleToTextArray(letters))
-print(imageToText("Braille-Interpreter/backend/braille/images/Picture1.png"))
+print(imageToText("Braille-Interpreter/backend/User-Images/Picture1.png"))
