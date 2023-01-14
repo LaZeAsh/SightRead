@@ -6,6 +6,7 @@ from brailleImage import braille_image_to_english
 
 app = Flask(__name__)
 
+# Convert TEXT -> Braille String
 @app.route('/textToBraille/<string:text>', methods=['GET'])
 def text_to_braille(text):
     text_to_braille = braille.textToBraille(text)
