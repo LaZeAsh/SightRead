@@ -21,10 +21,10 @@
 
 import numpy as np
 import os
-from PIL import Image
+import PIL
+import PIL.Image as Image
 from pytesseract import image_to_string
 import matplotlib.pyplot as plt
-import PIL
 from model import charToArray, asciicodes, brailles
 
 ascii_braille = {}
@@ -200,4 +200,7 @@ def imageToBraille(img):
     textToBraille(imageToText(img))
 
 
-imageToText("puretext.jpeg")
+
+textToBraille("Hello")
+
+# imageToText("puretext.jpeg")
