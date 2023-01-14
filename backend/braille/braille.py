@@ -100,12 +100,17 @@ def brailleToTextArray(array):
     return new_chars
 
 def imageToText(img):
-    return pt.image_to_string(Image.open(img))
+    try:
+        return pt.image_to_string(Image.open(img))
+    except:
+        pt.pytesseract.tesseract_cmd = r'C:/Program Files/Tesseract-OCR/tesseract.exe'
+        return pt.image_to_string(Image.open(img))
 
 def imageToBraille(img):
     textToBraille(imageToText(img))
 
 letters = "⠓⠑⠇⠇⠕⠀⠺⠕⠗⠇⠙⠮"
+
 
 print(textToBraille("Hello World!"))
 print(brailleToTextArray(letters))
