@@ -1,40 +1,44 @@
 //
-//  ImageView.swift
+//  TextToBraille.swift
 //  Braille-Interpreter
 //
 
 import SwiftUI
 
-struct ImageView: View {
+struct TextToBraille: View {
     
-    let text: Bool
-    // tracks if either text or speech
+    @State var text: String = ""
+    let isAr : Bool // tracks if AR to update button accordingly
     
+    @ViewBuilder
+    var barItems: some View {
+        if isAr {
+            Title() // Replace this view with AR feature 
+        } else {
+            InterpretedText(isText: false)
+        }
+    }
+
     var body: some View {
         VStack {
             VStack {
-                Text("Your image")
+                Text("Text to braille")
                     .font(.title2.weight(.light))
             }
             .foregroundColor(.white)
             .padding()
-            Image("braille")
-                .renderingMode(.original)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .clipped()
             Spacer()
+            
+            TextEditor(text: $text)
+            
+    
             VStack(spacing: 10) {
-                
-                NavigationLink(destination: InterpretedText(isText: true), label: {
+                NavigationLink(destination: barItems, label: {
                     HStack(alignment: .firstTextBaseline) {
                         Image(systemName: "arrow.forward")
                             .imageScale(.medium)
                             .symbolRenderingMode(.monochrome)
-                        
-                        text ? Text("Convert to text") : Text("Convert to speech")
-            
+                        isAr ? Text("Let's go AR!") : Text("Convert to braille")
                     }
                     .font(.body.weight(.medium))
                     .padding(.vertical, 16)
@@ -47,7 +51,6 @@ struct ImageView: View {
                             .background(RoundedRectangle(cornerRadius: 10, style: .continuous).fill(.yellow.opacity(0.1)))
                     }
                 })
-
             }
             .padding()
         }
@@ -62,8 +65,8 @@ struct ImageView: View {
     }
 }
 
-struct ImageView_Previews: PreviewProvider {
+struct TextToBraille_Previews: PreviewProvider {
     static var previews: some View {
-        ImageView(text: false)
+        TextToBraille(text: "", isAr: false)
     }
 }

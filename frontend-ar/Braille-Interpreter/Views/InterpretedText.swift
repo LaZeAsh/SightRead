@@ -9,9 +9,7 @@ struct InterpretedText: View {
     
     let isText: Bool
     // tracks if text or braille
-    
-    let text: String = ""
-    
+        
     var body: some View {
         VStack {
             VStack {

@@ -23,7 +23,7 @@ struct Title: View {
                     .aspectRatio(contentMode: .fit)
                 Spacer()
                 VStack(spacing: 10) {
-                    NavigationLink(destination: TextToBraille(), label: {
+                    NavigationLink(destination: TextToBraille(isAr: false), label: {
                         HStack(alignment: .firstTextBaseline) {
                             Image(systemName: "hand.point.up.braille.fill")
                                 .imageScale(.medium)
@@ -67,6 +67,25 @@ struct Title: View {
                                 .imageScale(.medium)
                                 .symbolRenderingMode(.monochrome)
                             Text("Braille to speech")
+                        }
+                        .font(.body.weight(.medium))
+                        .padding(.vertical, 16)
+                        .frame(maxWidth: .infinity)
+                        .clipped()
+                        .foregroundColor(.green)
+                        .background {
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .stroke(.clear.opacity(0.25), lineWidth: 0)
+                                .background(RoundedRectangle(cornerRadius: 10, style: .continuous).fill(.yellow.opacity(0.1)))
+                        }
+                    })
+                    
+                    NavigationLink(destination: TextToBraille(isAr: true), label: {
+                        HStack(alignment: .firstTextBaseline) {
+                            Image(systemName: "arkit")
+                                .imageScale(.medium)
+                                .symbolRenderingMode(.monochrome)
+                            Text("Text to AR Braille")
                         }
                         .font(.body.weight(.medium))
                         .padding(.vertical, 16)

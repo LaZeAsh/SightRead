@@ -37,4 +37,4 @@ def braille_image_to_text():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=6000, threaded=True, debug=True)
+    app.run(debug=True)
