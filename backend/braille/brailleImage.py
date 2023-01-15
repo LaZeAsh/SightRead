@@ -1,8 +1,6 @@
 from textwrap import wrap
 from imutils.perspective import four_point_transform as FPT
 from collections import Counter
-import matplotlib.pyplot as plt
-from imutils import contours
 from skimage import io
 import numpy as np
 import imutils
