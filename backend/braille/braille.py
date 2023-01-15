@@ -27,8 +27,6 @@ from PIL import Image
 from model import asciicodes, brailles
 
 
-
-
 ascii_braille = {}
 ascii_letters = {}
 
@@ -105,9 +103,7 @@ def brailleToTextArray(array):
     return new_chars
 
 def imageToText(url):
-    urllib.request.urlretrieve(url,
-   "userimage.png")
-
+    urllib.request.urlretrieve(url, "userimage.png")
     try:
         return pt.image_to_string(Image.open("userimage.png"))
     except:
